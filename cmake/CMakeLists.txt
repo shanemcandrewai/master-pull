@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(aten_min)
+
+find_package(Git)
+  if(Git_FOUND)
+  #  execute_process(COMMAND ${GIT_EXECUTABLE} pull WORKING_DIRECTORY ../../vimfiles)
+    execute_process(COMMAND ${GIT_EXECUTABLE} pull WORKING_DIRECTORY ../pytorch_setup ERROR_VARIABLE OUT ERROR_VARIABLE OUT)
+    message("pytorch_setup : ${OUT}")
+    execute_process(COMMAND ${GIT_EXECUTABLE} pull WORKING_DIRECTORY ../aten_libtorch ERROR_VARIABLE OUT ERROR_VARIABLE OUT)
+    message("aten_libtorch : ${OUT}")
+    execute_process(COMMAND ${GIT_EXECUTABLE} pull WORKING_DIRECTORY ../build_pytorch ERROR_VARIABLE OUT ERROR_VARIABLE OUT)
+    message("build_pytorch : ${OUT}")
+    execute_process(COMMAND ${GIT_EXECUTABLE} pull WORKING_DIRECTORY ../aten_min ERROR_VARIABLE OUT ERROR_VARIABLE OUT)
+    message("aten_min : ${OUT}")
+  endif()
