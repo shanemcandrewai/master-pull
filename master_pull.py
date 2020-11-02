@@ -5,3 +5,4 @@ print(sp.run(["git", "-C", "../build_libtorch", "pull"], capture_output=True, ch
 print(sp.run(["git", "-C", "../aten_min", "pull"], capture_output=True, check=True))
 print(sp.run(["git", "-C", "../aten_libtorch", "pull"], capture_output=True, check=True))
 print(sp.run(["git", "-C", "../libtorch_subdir", "pull"], capture_output=True, check=True))
+print(sp.run(["git", "-C", "../pytorch_setup", "pull"], capture_output=True, check=True))
